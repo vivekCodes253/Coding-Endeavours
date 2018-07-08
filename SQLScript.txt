@@ -1,0 +1,20 @@
+drop table if exists emp;
+create table emp(eid varchar(5), name varchar(20), man varchar(5));
+insert into emp values('1','A','');
+insert into emp values('2','B','1');
+insert into emp values('3','c','2');
+insert into emp values('4','D','1');
+insert into emp values('5','E','2');
+insert into emp values('6','F','5');
+
+
+select b.eid from emp a, emp b where a.name = 'E' and b.man in b.eid in (select * from
+
+select a.man from emp a where a.eid in (select b.man from emp b where a.man = b.eid or b.name = 'F') or a.name = 'F'; 
+
+
+select a.man from emp a, emp b where a.man = b.eid or  b.name = 'F' ;
+
+select a.man from emp a where a.eid in (select b.man from emp b where a.man = b.eid or b.name = 'F' or b.man ) or a.name = 'F'; 
+
+
